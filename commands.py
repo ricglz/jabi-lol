@@ -41,6 +41,12 @@ class Commands(object):
             return 'https://instagram.com/{0}'.format(arg)
         else:
             return 'https://instagram.com'
+    def r(arg=None):
+        """'r [insert query]' searches for subrredit"""
+        if arg:
+            return 'https://www.reddit.com/r/{0}/'.format(arg)
+        else:
+            return 'https://reddit.com'
 
     def help(arg=None):
         """'help' returns a list of usable commands """
