@@ -15,10 +15,10 @@ def route():
     try:
         query = str(request.args.get('query', ''))
         tokenized_query = query.split(' ', 1)
+        if query == tokenized_query[0]:
+            tokenized_query = query.split('/', 1)
         search_command = tokenized_query[0].lower()
-        option_args = None
-        if len(tokenized_query) == 2:
-            option_args = tokenized_query[1]
+        option_args = tokenized_query[1] if len(tokenized_query) == 2 else None
     except Exception as e:
         print(e)
         search_command = query
